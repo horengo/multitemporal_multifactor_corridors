@@ -96,8 +96,8 @@ var seaMsk = bitSea.remap([0,1],[maxCost,0]);
 
 //////////////ELIMINATE RESERVOIRS////////////
 
-var maskDams = ee.FeatureCollection('users/hao23/Grand_reservoirs') //Global Reservoir and Dam Database (GRanD) v1.3 (2019), by the Global Dam Watch (Lehner, B., C. Reidy Liermann, C. Revenga, C. Vörösmarty, B. Fekete, P. Crouzet, P. Döll, M. Endejan, K. Frenken, J. Magome, C. Nilsson, J.C. Robertson, R. Rodel, N. Sindorf, and D. Wisser. 2011. High-resolution mapping of the world’s reservoirs and dams for sustainable river-flow management. Frontiers in Ecology and the Environment 9 (9): 494-502.)
-    .reduceToImage({
+var maskDams = ee.FeatureCollection('users/userX/GRanD') //Global Reservoir and Dam Database (GRanD) v1.3 (2019), by the Global Dam Watch (Lehner, B., C. Reidy Liermann, C. Revenga, C. Vörösmarty, B. Fekete, P. Crouzet, P. Döll, M. Endejan, K. Frenken, J. Magome, C. Nilsson, J.C. Robertson, R. Rodel, N. Sindorf, and D. Wisser. 2011. High-resolution mapping of the world’s reservoirs and dams for sustainable river-flow management. Frontiers in Ecology and the Environment 9 (9): 494-502.)
+    .reduceToImage({                                     //Download from https://www.globaldamwatch.org/directory and upload into your own assets, then subtitute the name of the asset
         properties: ['value'],
         reducer: ee.Reducer.first()})
     .unmask(0)
