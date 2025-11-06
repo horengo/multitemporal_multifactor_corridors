@@ -1,10 +1,10 @@
 # Repository for the generation of multitemporal multifactor corridor networks (M2CoNet)
 The generation of M2CoNet requires several steps:
-1. Generation of cost surfaces (for which the GEE code is provided)
-2. Generation of cost distance rasters from user-defined points using the knights move algorithm
-3. Generation of corridors using the previously generated cost distance rasters
-4. Normalisation of the corridors
-5. Raster cells stats to join all normalised corridors
+1. Generation of cost surface.
+2. Generation of cost distance rasters from user-defined points using the knights move algorithm.
+3. Generation of corridors using the previously generated cost distance rasters.
+4. Normalisation of the corridors.
+5. Raster cells stats to join all normalised corridors.
 
 While a Jupyter Notebook with the full algorithm is provided (the requirements file can be used to set up the environment), GEE code is also provided for those who prefer to use GEE web-based code editor.
 
@@ -15,7 +15,7 @@ The generation of cost surfaces requires two external datasets:
    run the GEE code for the generation of cost surfaces.
 3. The Global Reservoir and Dam Database (GRanD), whcih can be downloaded at https://www.globaldamwatch.org/directory
    Please, note that the GRanD has now been superseded by the The GDW (v1) consensus global database.
-   In order to use the database, please, download it from the provided link and upload in your GEE assets repository. Then substitute the name of the asset in code line 99.
+   In order to use the database, please, download it from the provided link and upload in your GEE assets repository. Then substitute the name of the asset in code (line 99 in the GEE code provided).
 
 ## For the generation of corridors
 GRASS GIS needs to be installed locally
