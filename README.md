@@ -6,7 +6,7 @@ The generation of M2CoNet requires several steps:
 4. Normalisation of the corridors
 5. Raster cells stats to join all normalised corridors
 
-While a Jupyter Notebook with the full algorithm is provided (a requirements file can be used to set up the environment), GEE code is also provided for those who prefer the native environment.
+While a Jupyter Notebook with the full algorithm is provided (the requirements file can be used to set up the environment), GEE code is also provided for those who prefer the native environment.
 
 ## For the generation of cost surfaces
 The generation of cost surfaces requires two external datasets:
