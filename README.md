@@ -19,5 +19,5 @@ The generation of cost surfaces requires two external datasets:
    In order to use the database, please, download it from the provided link and upload in your GEE assets repository. Then substitute the name of the asset in code (line 99 in the GEE code provided).
 
 ## For the generation of corridors
-GRASS GIS needs to be installed locally
-Follow the instruction provided within the Jupyter notebook
+GRASS GIS needs to be installed locally.
+Follow the instruction provided within the Jupyter notebook.
