@@ -1,14 +1,16 @@
 // Define a central point in your study area (as X,Y WGS84 decimal degrees) and a scale,
 // just for visualisation purposes
 Map.setCenter(67.601,37.566,5);
-
-var geometry = ee.Geometry.Polygon(               // Whole area Silk Route
-        [[[26.034856936314327, 31.965400777310872],
-          [70.85299048338345, 19.854238685800006],
-          [111.41637223792247, 21.349486823942993],
-          [111.44459000218353, 47.17893659653418],
-          [70.6364691148242, 53.122300330081565],
-          [25.974978246994738, 47.85290888472198]]]);
+var geometry = ee.Geometry.Polygon([            // Whole area Silk Route
+    [26.034856936314327, 31.965400777310872],
+    [34.19255939893447,27.520378920323584],
+    [70.85299048338345, 19.854238685800006],
+    [90.28374707240327,20.074324423110866],
+    [112.29527848792249,21.22664649657822],
+    [112.23560562718355,47.3578548447329],
+    [70.6364691148242, 53.122300330081565],
+    [25.974978246994738, 47.85290888472198],
+    [26.034856936314327,31.965400777310872]]);
 
 
 ////////////DIGITAL SURFACE MODEL (DSM)///////////////
@@ -276,10 +278,10 @@ var costsMax = (costsRaw.gt(maxCost).multiply(maxCost))
 
 var bitSel = prompt('Select 8-bit or 16-bit raster output', '16-bit');
 
-if (bitSel == '8-bit') {var costs = (costsMax.divide(maxCost)).multiply(255).byte().clip(geometry); //8-bit scaling of values
+if (bitSel == '8-bit') {var costs = (costsMax.divide(maxCost)).multiply(255).byte().clip(geometry).unmask(255); //8-bit scaling of values
     Map.addLayer(costs, {min:1, max:150, palette: '0f00ff, 03ff00, efff00, ffbc00, ff0000, ff0081'}, 'Cost surface');
 } 
-else {var costs = costsMax.multiply(ee.Number(10).pow(4)).round().divide(ee.Number(10).pow(4)).multiply(0.0001).clip(geometry); //16-bit scaling of values
+else {var costs = costsMax.multiply(ee.Number(10).pow(4)).round().divide(ee.Number(10).pow(4)).multiply(0.0001).clip(geometry).unmask(0.004); //16-bit scaling of values
     Map.addLayer(costs, {min:0.0001, max:0.001, palette: '0f00ff, 03ff00, efff00, ffbc00, ff0000, ff0081'}, 'Cost surface');
 }
 
