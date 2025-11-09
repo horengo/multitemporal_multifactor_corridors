@@ -20,3 +20,4 @@ The generation of cost surfaces requires two external datasets:
 
 ## For the generation of corridors
 GRASS GIS needs to be installed locally
+Follow the instruction provided within the Jupyter notebook
