@@ -11,23 +11,17 @@ Just copy the GEE code, paste it into the code editor and press run.
 
 ## Setting up the environment
 
-1. Create and activate an env (pick a supported Python; 3.10 is safe for NumPy 1.26.x):
-*conda env create -f environment_m2conet.yml* # Creates the environemt and installs the pinned packages
-conda activate m2conet
-python -m ipykernel install --user --name m2conet --display-name "m2conet"* Registers your current Python environment as a selectable Jupyter kernel
+Create and activate an env using the provided YAML file: <br>
+*conda env create -f environment_m2conet.yml*  # Creates the environemt and installs the pinned packages <br>
+*conda activate m2conet*  # Activates the environment <br>
+*python -m ipykernel install --user --name m2conet --display-name "m2conet"*  # Optional: registers your current Python environment as a selectable Jupyter kernel. No need to use if you are going to lauch Jupyter from m3conet environment (the YAML file installs jupyterlab)
 
-2. Install everything via conda where possible (pins optional but recommended)
-*conda install -c conda-forge \
-  numpy==1.26.2 rasterio==1.3.9 gdal geemap==0.36.6 earthengine-api==1.6.15 \
-  google-auth==2.41.1 google-auth-oauthlib==1.2.3 google-cloud-storage==3.4.1 \
-  ipykernel==6.25.0 ipython==8.15.0 ipywidgets==8.0.4 jupyterlab==4.4.10 -y*
-
-2alt. **Alternatively** if you prefer to follow the exact pip file instead of conda pins, install only the heavy libs with conda, then pip the pinned set (helps when pip wheels struggle with GDAL/PROJ).
-*conda install -c conda-forge python=3.10 rasterio gdal -y
-pip install -r /mnt/data/requirements_M2CoNet.txt*
-
-3. Register the kernel in Jupyter
-python -m ipykernel install --user --name m2conet --display-name "m2conet"
+**Alternatively** if you prefer to use the requirements pip file instead of conda pins, install only the heavy libs with conda, then pip the pinned set (helps when pip wheels struggle with GDAL/PROJ). <br>
+*conda create -n m2conet -c conda-forge python=3.10 -y*  # Creates the environemt (with a supported Python 3.10, which is safe for NumPy 1.26.x) and installs the pinned packages <br>
+*conda activate m2conet*  # Activates the environemt <br>
+*conda install -c conda-forge python=3.10 rasterio gdal -y*  # Installs the pinned packages <br>
+*pip install -r /mnt/data/requirements_M2CoNet.txt*  <br>
+*python -m ipykernel install --user --name m2conet --display-name "m2conet"*  # Register the kernel in Jupyter (optional, see above) <br>
 
 
 ## For the generation of cost surfaces
