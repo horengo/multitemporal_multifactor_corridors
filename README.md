@@ -12,8 +12,9 @@ Just copy the GEE code, paste it into the code editor and press run.
 ## Setting up the environment
 
 1. Create and activate an env (pick a supported Python; 3.10 is safe for NumPy 1.26.x):
-*conda create -n m2conet -c conda-forge python=3.10 -y
-conda activate m2conet*
+*conda env create -f environment_m2conet.yml* # Creates the environemt and installs the pinned packages
+conda activate m2conet
+python -m ipykernel install --user --name m2conet --display-name "m2conet"* Registers your current Python environment as a selectable Jupyter kernel
 
 2. Install everything via conda where possible (pins optional but recommended)
 *conda install -c conda-forge \
