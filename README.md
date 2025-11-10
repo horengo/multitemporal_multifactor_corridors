@@ -12,9 +12,10 @@ Just copy the GEE code, paste it into the code editor and press run.
 ## Setting up the environment
 
 Create and activate an env using the provided YAML file: <br> <br>
-*conda env create -f environment_m2conet.yml*  # Creates the environemt and installs the pinned packages <br>
+```conda env create -f environment_m2conet.yml  # Creates the environemt and installs the pinned packages <br>
 *conda activate m2conet*  # Activates the environment <br>
 *python -m ipykernel install --user --name m2conet --display-name "m2conet"*  # Optional: registers your current Python environment as a selectable Jupyter kernel. No need to use if you are going to lauch Jupyter from m3conet environment (the YAML file installs jupyterlab) <br>
+```
 
 **Alternatively** if you prefer to use the requirements pip file instead of conda pins, install only the heavy libs with conda, then pip the pinned set (helps when pip wheels struggle with GDAL/PROJ). <br> <br>
 *conda create -n m2conet -c conda-forge python=3.10 -y*  # Creates the environemt (with a supported Python 3.10, which is safe for NumPy 1.26.x) and installs the pinned packages <br>
